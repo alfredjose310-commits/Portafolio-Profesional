@@ -1,27 +1,29 @@
 # Portafolio de Alfredo José Yujra Chambi
 
-Portafolio profesional responsive creado con HTML, CSS y JavaScript. Esta versión utiliza un tema claro corporativo en blanco y azul, con tarjetas limpias, sombras discretas y mejor legibilidad.
+Portafolio profesional responsive (HTML, CSS y JavaScript) con estilo ejecutivo moderno: blanco, azul marino y azul eléctrico, tipografía Plus Jakarta Sans + Instrument Serif y fotografías reales de Unsplash.
 
 ## Archivos
-- `index.html`: estructura, contenido y metadatos.
-- `style.css`: tema claro, diseño adaptable y estilos visuales.
-- `script.js`: menú móvil accesible, cierre con Escape y año automático.
-- `README.md`: instrucciones de publicación.
+- `index.html`: estructura, contenido, metadatos y fotos.
+- `style.css`: diseño visual y adaptación a móvil/tablet.
+- `script.js`: menú móvil accesible, sombra del encabezado, animaciones de entrada y año automático.
+- `README.md`: estas instrucciones.
+
+## Secciones
+Inicio · Sobre mí · Servicios y habilidades · Cómo trabajo (proceso) · Proyectos · Contacto.
 
 ## Antes de publicar
 1. En `index.html`, reemplaza `tu.correo@ejemplo.com` por tu correo profesional.
 2. Reemplaza `https://github.com/` por la URL de tu perfil de GitHub.
-3. Verifica que cada proyecto y enlace refleje trabajos reales. Las tarjetas actuales son ejemplos de presentación y deben enlazarse a proyectos publicados cuando estén disponibles.
-4. Guarda los cuatro archivos en la raíz del repositorio, junto a cualquier otro archivo que ya utilices.
+3. Ajusta los proyectos para que reflejen trabajos reales; cambia los enlaces `#contacto` por enlaces a demos o repositorios cuando estén publicados.
+4. Revisa que las herramientas listadas reflejen con precisión tu nivel en cada una.
 
-## Actualizar GitHub
-1. Abre tu repositorio en GitHub.
-2. Selecciona **Add file → Upload files**.
-3. Arrastra `index.html`, `style.css`, `script.js` y `README.md`.
-4. Confirma los cambios con **Commit changes**.
-5. Si GitHub Pages ya está activado, espera a que termine la publicación y recarga el sitio. Si no está activado, ve a **Settings → Pages**, selecciona **Deploy from a branch**, rama `main` y carpeta `/ (root)`, y guarda.
+## Fotografías
+Las fotos se cargan desde Unsplash (licencia gratuita, uso comercial permitido). Para cambiar una, reemplaza la URL `https://images.unsplash.com/photo-...` en el atributo `src` de la imagen. Si prefieres no depender de internet, descarga la foto, guárdala en una carpeta `img/` y usa `src="img/nombre.jpg"`.
 
-## Notas
-- Google Fonts requiere conexión a internet; hay fuentes alternativas si no carga.
-- El sitio es estático: no necesita servidor ni base de datos.
-- Revisa los enlaces de contacto y prueba el menú en escritorio y móvil antes de compartirlo.
+Si una foto no carga, se muestra un fondo degradado azul en su lugar.
+
+## Actualizar GitHub Pages
+1. Abre tu repositorio en GitHub → **Add file → Upload files**.
+2. Arrastra `index.html`, `style.css`, `script.js` y `README.md`.
+3. Confirma con **Commit changes** y espera la publicación.
+4. Si Pages no está activado: **Settings → Pages → Deploy from a branch**, rama `main`, carpeta `/ (root)`.
