@@ -1,28 +1,27 @@
 # Portafolio de Alfredo José Yujra Chambi
 
-Sitio web personal responsive creado con HTML, CSS y JavaScript. Está preparado para publicarse gratis con GitHub Pages.
+Portafolio profesional responsive creado con HTML, CSS y JavaScript. Esta versión utiliza un tema claro corporativo en blanco y azul, con tarjetas limpias, sombras discretas y mejor legibilidad.
 
 ## Archivos
-- `index.html`: contenido y estructura de la página.
-- `style.css`: estilos, diseño adaptable a móviles y animaciones suaves.
-- `script.js`: menú móvil y año automático del pie de página.
+- `index.html`: estructura, contenido y metadatos.
+- `style.css`: tema claro, diseño adaptable y estilos visuales.
+- `script.js`: menú móvil accesible, cierre con Escape y año automático.
+- `README.md`: instrucciones de publicación.
 
-## Personalización antes de publicar
-1. Abre `index.html`.
-2. Busca `tu.correo@ejemplo.com` y reemplázalo por tu correo profesional.
-3. Busca `https://github.com/` y reemplázalo por la URL de tu perfil de GitHub.
-4. Revisa las habilidades y proyectos para que reflejen exactamente tu experiencia. Los proyectos incluidos son ejemplos de presentación; sustitúyelos por proyectos reales cuando sea posible.
+## Antes de publicar
+1. En `index.html`, reemplaza `tu.correo@ejemplo.com` por tu correo profesional.
+2. Reemplaza `https://github.com/` por la URL de tu perfil de GitHub.
+3. Verifica que cada proyecto y enlace refleje trabajos reales. Las tarjetas actuales son ejemplos de presentación y deben enlazarse a proyectos publicados cuando estén disponibles.
+4. Guarda los cuatro archivos en la raíz del repositorio, junto a cualquier otro archivo que ya utilices.
 
-## Publicar con GitHub Pages
-1. Inicia sesión en https://github.com/ y crea un repositorio nuevo, por ejemplo `portafolio-alfredo`.
-2. Sube `index.html`, `style.css`, `script.js` y `README.md` a la raíz del repositorio.
-3. En el repositorio entra a **Settings → Pages**.
-4. En **Build and deployment**, elige **Deploy from a branch**.
-5. Selecciona la rama `main` y la carpeta `/ (root)`, y pulsa **Save**.
-6. Espera a que termine la publicación. GitHub mostrará la URL de tu sitio en esa misma sección.
-
-Si quieres que la página esté en `https://TUUSUARIO.github.io/`, el repositorio debe llamarse exactamente `TUUSUARIO.github.io` (sustituye `TUUSUARIO` por tu usuario de GitHub).
+## Actualizar GitHub
+1. Abre tu repositorio en GitHub.
+2. Selecciona **Add file → Upload files**.
+3. Arrastra `index.html`, `style.css`, `script.js` y `README.md`.
+4. Confirma los cambios con **Commit changes**.
+5. Si GitHub Pages ya está activado, espera a que termine la publicación y recarga el sitio. Si no está activado, ve a **Settings → Pages**, selecciona **Deploy from a branch**, rama `main` y carpeta `/ (root)`, y guarda.
 
 ## Notas
-- El diseño usa Google Fonts; para cargar esas fuentes se necesita conexión a internet. Si no hay conexión, se usarán fuentes alternativas.
-- El correo y los enlaces de contacto son ejemplos y deben actualizarse antes de publicar.
+- Google Fonts requiere conexión a internet; hay fuentes alternativas si no carga.
+- El sitio es estático: no necesita servidor ni base de datos.
+- Revisa los enlaces de contacto y prueba el menú en escritorio y móvil antes de compartirlo.
