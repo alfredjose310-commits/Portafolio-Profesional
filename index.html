@@ -1,279 +1,642 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portafolio profesional de Alfredo José Yujra Chambi: análisis de datos, Business Intelligence y automatización de procesos con Excel, VBA y herramientas digitales.">
-  <meta name="theme-color" content="#0B1B3F">
-  <meta name="color-scheme" content="light">
-  <title>Alfredo Yujra | Análisis de Datos y Automatización</title>
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Alfredo Yujra | Análisis de Datos y Automatización">
-  <meta property="og:description" content="Convierto datos en decisiones y automatizo procesos para que tu equipo trabaje mejor.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://images.unsplash.com">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alfredo Yujra | Automatización con Excel, VBA y Business Intelligence</title>
+<meta name="description" content="Automatizo reportes en Excel y VBA, creo tableros de Business Intelligence y aplicaciones a medida para que tu equipo deje de perder horas en tareas manuales.">
+<meta name="theme-color" content="#0A1640">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Alfredo Yujra | Automatización y análisis de datos">
+<meta property="og:description" content="Deja de perder horas en Excel. Automatiza tus reportes y decide con datos claros.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Todo el estilo está dentro de este archivo: solo necesitas subir index.html -->
+<style>
+:root{
+  --night:#070F2E;
+  --navy:#0A1640;
+  --blue:#2F6BFF;
+  --blue-2:#5B8CFF;
+  --cyan:#22D3EE;
+  --violet:#7C5CFF;
+  --orange:#FF7A1A;
+  --orange-2:#FF9A3D;
+  --green:#16C784;
+  --ink:#0B1533;
+  --text:#3B4663;
+  --muted:#6B7591;
+  --line:#E3E8F4;
+  --bg:#FFFFFF;
+  --bg-soft:#F4F7FF;
+  --grad:linear-gradient(120deg,#22D3EE 0%,#2F6BFF 45%,#7C5CFF 100%);
+  --grad-cta:linear-gradient(135deg,#FF9A3D 0%,#FF6A1A 100%);
+  --shadow-sm:0 2px 10px rgba(11,21,51,.06);
+  --shadow:0 18px 40px -14px rgba(11,21,51,.22);
+  --shadow-lg:0 40px 80px -24px rgba(7,15,46,.45);
+  --r:22px;
+  --font:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4,p,figure,ul,ol{margin:0}
+ul,ol{padding:0;list-style:none}
+button{font:inherit}
+.i{width:1em;height:1em;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;display:inline-block;vertical-align:middle}
+::selection{background:#CFE0FF;color:var(--navy)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:10px}
+.wrap{width:100%;max-width:1240px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}
+h1,h2,h3,h4{color:var(--ink);font-weight:800;letter-spacing:-.03em;line-height:1.1;text-wrap:balance}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* ---------- Botones ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 28px;border-radius:999px;font-weight:700;font-size:15.5px;border:2px solid transparent;cursor:pointer;transition:transform .25s var(--ease),box-shadow .25s,background .2s,border-color .2s;white-space:nowrap}
+.btn .i{font-size:19px;transition:transform .25s var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn:hover .i{transform:translateX(3px)}
+.btn-cta{background:var(--grad-cta);color:#fff;box-shadow:0 14px 30px -10px rgba(255,106,26,.7)}
+.btn-cta:hover{box-shadow:0 20px 40px -12px rgba(255,106,26,.8)}
+.btn-glass{color:#fff;border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.08);backdrop-filter:blur(8px)}
+.btn-glass:hover{border-color:#fff;background:rgba(255,255,255,.14)}
+.btn-blue{background:var(--blue);color:#fff;box-shadow:0 14px 30px -12px rgba(47,107,255,.75)}
+.btn-blue:hover{background:#1F55E6}
+
+/* ---------- Header ---------- */
+.header{position:fixed;inset:0 0 auto;z-index:60;transition:background .3s,box-shadow .3s,backdrop-filter .3s}
+.header.solid{background:rgba(7,15,46,.86);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 10px 30px -15px rgba(0,0,0,.5)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:inline-flex;align-items:center;gap:12px;color:#fff}
+.brand-mark{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:var(--grad);font-weight:800;font-size:15px;color:#fff;box-shadow:0 8px 20px -8px rgba(47,107,255,.9)}
+.brand-name{display:flex;flex-direction:column;line-height:1.15;font-weight:800;font-size:16px;letter-spacing:-.02em}
+.brand-name small{font-weight:500;font-size:12px;color:#9FB0D9;letter-spacing:0}
+.menu{display:flex;align-items:center;gap:30px;font-size:15px;font-weight:600;color:#C9D4F2}
+.menu a{transition:color .2s}
+.menu a:hover{color:#fff}
+.menu .btn{min-height:44px;padding:0 20px;font-size:14.5px;color:#fff}
+.burger{display:none;width:46px;height:46px;border-radius:14px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);position:relative;cursor:pointer}
+.burger span{position:absolute;left:13px;right:13px;height:2px;border-radius:2px;background:#fff;transition:transform .3s var(--ease),top .3s var(--ease)}
+.burger span:first-child{top:18px}
+.burger span:last-child{top:26px}
+.burger[aria-expanded="true"] span:first-child{top:22px;transform:rotate(45deg)}
+.burger[aria-expanded="true"] span:last-child{top:22px;transform:rotate(-45deg)}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;background:radial-gradient(900px 600px at 85% 20%,rgba(47,107,255,.55),transparent 60%),radial-gradient(700px 500px at 10% 90%,rgba(34,211,238,.22),transparent 60%),radial-gradient(600px 400px at 60% 100%,rgba(124,92,255,.35),transparent 60%),var(--night);color:#C9D4F2;overflow:hidden;padding-top:76px}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:60px 60px;-webkit-mask-image:radial-gradient(ellipse at 60% 40%,#000 15%,transparent 70%);mask-image:radial-gradient(ellipse at 60% 40%,#000 15%,transparent 70%);pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:56px;align-items:center;padding-top:64px;padding-bottom:96px}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 10px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);font-size:13.5px;font-weight:600;color:#E3EAFF;margin-bottom:26px}
+.dot{position:relative;width:9px;height:9px;border-radius:50%;background:var(--green);display:inline-block;flex:none}
+.dot::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px solid var(--green);opacity:0;animation:ping 2s infinite}
+@keyframes ping{0%{transform:scale(.5);opacity:.9}100%{transform:scale(1.7);opacity:0}}
+.hero h1{color:#fff;font-size:clamp(38px,5.6vw,70px);line-height:1.04;margin-bottom:24px}
+.hero-lead{font-size:clamp(16.5px,1.5vw,19px);line-height:1.75;max-width:580px;color:#C9D4F2}
+.hero-lead strong{color:#fff}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+.hero-checks{display:flex;flex-wrap:wrap;gap:12px 26px;margin-top:34px;font-size:14.5px;font-weight:600;color:#E3EAFF}
+.hero-checks li{display:flex;align-items:center;gap:9px}
+.hero-checks .i{color:var(--cyan);font-size:20px;stroke-width:2.6}
+
+.hero-visual{position:relative;padding:24px 10px 24px 34px}
+.hero-photo{position:relative;border-radius:30px;overflow:hidden;aspect-ratio:4/4.5;background:linear-gradient(135deg,#13245F,var(--blue));box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,.14)}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(200deg,rgba(47,107,255,.15),transparent 40%,rgba(7,15,46,.55))}
+.glass{position:absolute;z-index:2;background:rgba(255,255,255,.95);color:var(--ink);border-radius:20px;box-shadow:var(--shadow-lg);animation:float 6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.g-report{left:0;bottom:48px;width:250px;padding:18px}
+.g-report .top{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:800}
+.badge-ok{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;color:#05814F;background:#E6FAF2;padding:4px 9px;border-radius:999px}
+.bars{display:flex;align-items:flex-end;gap:8px;height:76px;margin:16px 0 12px;padding-bottom:2px;border-bottom:1px solid var(--line)}
+.bars i{flex:1;border-radius:7px 7px 2px 2px;background:var(--grad)}
+.g-report .foot{font-size:12px;font-weight:600;color:var(--muted)}
+.g-auto{top:40px;right:-6px;display:flex;align-items:center;gap:12px;padding:14px 18px 14px 14px;animation-delay:-3s}
+.g-auto .ic{display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:var(--grad-cta);color:#fff;font-size:22px}
+.g-auto strong{display:block;font-size:14px}
+.g-auto small{display:block;font-size:12.5px;color:var(--muted)}
+
+.tools{position:relative;border-top:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.tools-track{display:flex;width:max-content;animation:marquee 40s linear infinite}
+.tools-track span{display:flex;align-items:center;gap:14px;padding:22px 30px;font-weight:700;font-size:15.5px;color:#AFC0EA;white-space:nowrap}
+.tools-track span::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--grad)}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* ---------- Secciones ---------- */
+.sec{padding:110px 0}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:#EAF0FF;color:var(--blue);font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px}
+.sec h2{font-size:clamp(30px,4vw,50px);margin-bottom:18px}
+.sec-lead{font-size:17.5px;color:var(--muted);max-width:640px}
+.center{text-align:center}
+.center .sec-lead{margin-left:auto;margin-right:auto}
+.head{margin-bottom:56px}
+
+/* Dolor */
+.pain{background:var(--bg-soft)}
+.pain-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.pain-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px 24px;box-shadow:var(--shadow-sm);transition:transform .3s var(--ease),box-shadow .3s}
+.pain-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.pain-card .ic{display:grid;place-items:center;width:50px;height:50px;border-radius:15px;background:#FFF1E7;color:var(--orange);font-size:24px;margin-bottom:18px}
+.pain-card h3{font-size:18px;margin-bottom:8px}
+.pain-card p{font-size:15px;color:var(--muted)}
+
+.solution{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center;margin-top:90px}
+.sol-photo{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:5/4;background:linear-gradient(135deg,var(--navy),var(--blue));box-shadow:var(--shadow-lg)}
+.sol-photo img{width:100%;height:100%;object-fit:cover}
+.sol-tag{position:absolute;left:18px;bottom:18px;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:#fff;font-size:13.5px;font-weight:700;color:var(--ink);box-shadow:var(--shadow-sm)}
+.sol-tag .i{color:var(--green);font-size:18px}
+.benefits{display:grid;gap:14px;margin-top:28px}
+.benefits li{display:flex;gap:16px;align-items:flex-start;padding:18px 20px;border-radius:18px;background:#fff;border:1px solid var(--line)}
+.benefits .ic{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--grad);color:#fff;font-size:20px;flex:none}
+.benefits strong{display:block;color:var(--ink);font-size:16px}
+.benefits span{display:block;color:var(--muted);font-size:14.5px}
+
+/* Servicios */
+.svc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.svc{position:relative;padding:34px 30px;border-radius:var(--r);background:#fff;border:1px solid var(--line);overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s,border-color .35s}
+.svc::after{content:"";position:absolute;inset:auto -40% -60% auto;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(47,107,255,.14),transparent 70%);opacity:0;transition:opacity .4s}
+.svc:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#C9D7FF}
+.svc:hover::after{opacity:1}
+.svc .ic{display:grid;place-items:center;width:58px;height:58px;border-radius:18px;color:#fff;font-size:27px;margin-bottom:22px;box-shadow:0 12px 24px -10px rgba(47,107,255,.6)}
+.c1{background:linear-gradient(135deg,#16C784,#0EA371)}
+.c2{background:linear-gradient(135deg,#2F6BFF,#5B8CFF)}
+.c3{background:linear-gradient(135deg,#FF9A3D,#FF6A1A)}
+.c4{background:linear-gradient(135deg,#7C5CFF,#A68BFF)}
+.c5{background:linear-gradient(135deg,#0EA5E9,#22D3EE)}
+.c6{background:linear-gradient(135deg,#EC4899,#F472B6)}
+.svc h3{font-size:20px;margin-bottom:10px}
+.svc p{color:var(--muted);font-size:15.5px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.tags span{font-size:12.5px;font-weight:700;color:var(--blue);background:#EEF3FF;padding:5px 12px;border-radius:999px}
+
+/* Antes / después */
+.compare{background:var(--night);color:#C9D4F2;position:relative;overflow:hidden}
+.compare::before{content:"";position:absolute;width:800px;height:800px;left:-300px;top:-400px;border-radius:50%;background:radial-gradient(circle,rgba(47,107,255,.35),transparent 65%)}
+.compare h2{color:#fff}
+.compare .sec-lead{color:#AFC0EA}
+.compare .eyebrow{background:rgba(255,255,255,.1);color:var(--cyan)}
+.cmp-grid{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.cmp{border-radius:26px;padding:34px 32px}
+.cmp h3{display:flex;align-items:center;gap:12px;font-size:22px;margin-bottom:22px}
+.cmp h3 .ic{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;font-size:20px}
+.cmp li{display:flex;gap:12px;align-items:flex-start;padding:12px 0;font-size:16px;border-top:1px solid}
+.cmp li .i{font-size:20px;margin-top:3px}
+.before{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1)}
+.before h3{color:#C9D4F2}
+.before h3 .ic{background:rgba(255,106,26,.15);color:var(--orange-2)}
+.before li{border-color:rgba(255,255,255,.08);color:#AFC0EA}
+.before li .i{color:var(--orange-2)}
+.after{background:#fff;box-shadow:var(--shadow-lg)}
+.after h3{color:var(--ink)}
+.after h3 .ic{background:var(--grad);color:#fff}
+.after li{border-color:var(--line);color:var(--text)}
+.after li .i{color:var(--green)}
+
+/* Proceso */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;counter-reset:s}
+.step{position:relative;padding:30px 26px;border-radius:var(--r);background:var(--bg-soft);border:1px solid var(--line)}
+.step-n{display:grid;place-items:center;width:52px;height:52px;border-radius:16px;background:var(--grad);color:#fff;font-weight:800;font-size:18px;margin-bottom:20px;box-shadow:0 12px 24px -10px rgba(47,107,255,.7)}
+.step h3{font-size:19px;margin-bottom:8px}
+.step p{font-size:15px;color:var(--muted)}
+
+/* Proyectos */
+.projects{background:var(--bg-soft)}
+.proj-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.proj{display:flex;flex-direction:column;background:#fff;border-radius:26px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm);transition:transform .35s var(--ease),box-shadow .35s}
+.proj:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg)}
+.proj-media{position:relative;aspect-ratio:16/11;overflow:hidden;background:linear-gradient(135deg,var(--navy),var(--blue))}
+.proj-media img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.proj:hover .proj-media img{transform:scale(1.06)}
+.proj-media .lbl{position:absolute;left:16px;top:16px;padding:7px 13px;border-radius:999px;background:rgba(255,255,255,.95);font-size:12px;font-weight:800;color:var(--ink)}
+.proj-body{display:flex;flex-direction:column;flex:1;padding:26px 26px 28px}
+.proj-body h3{font-size:21px;margin-bottom:10px}
+.proj-body p{font-size:15px;color:var(--muted)}
+.proj-body .tags{margin-top:18px}
+.more{display:inline-flex;align-items:center;gap:8px;margin-top:auto;padding-top:22px;font-weight:800;font-size:15px;color:var(--blue)}
+.more .i{font-size:18px;transition:transform .25s var(--ease)}
+.more:hover .i{transform:translate(3px,-3px)}
+
+/* Sobre mí */
+.about-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:70px;align-items:center}
+.about-photo{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/4.3;background:linear-gradient(135deg,var(--navy),var(--blue));box-shadow:var(--shadow-lg)}
+.about-photo img{width:100%;height:100%;object-fit:cover}
+.about-copy p{font-size:17px;color:var(--muted);margin-bottom:16px}
+.values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:28px}
+.values div{padding:18px 16px;border-radius:18px;background:var(--bg-soft);border:1px solid var(--line)}
+.values strong{display:block;color:var(--ink);font-size:15.5px}
+.values span{font-size:13.5px;color:var(--muted)}
+
+/* FAQ */
+.faq{background:var(--bg-soft)}
+.faq-list{max-width:820px;margin:0 auto;display:grid;gap:14px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:18px;padding:0 24px;transition:box-shadow .3s}
+.faq details[open]{box-shadow:var(--shadow)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font-weight:700;font-size:17px;color:var(--ink)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .i{font-size:22px;color:var(--blue);transition:transform .3s var(--ease)}
+.faq details[open] summary .i{transform:rotate(45deg)}
+.faq details p{padding:0 0 22px;color:var(--muted);font-size:15.5px}
+
+/* CTA final */
+.final{position:relative;padding:130px 0;color:#fff;text-align:center;overflow:hidden;background:var(--night)}
+.final-bg{position:absolute;inset:0}
+.final-bg img{width:100%;height:100%;object-fit:cover;opacity:.4}
+.final-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(7,15,46,.94) 0%,rgba(10,22,64,.82) 45%,rgba(47,107,255,.78) 100%)}
+.final .wrap{position:relative;max-width:900px}
+.final h2{color:#fff;font-size:clamp(32px,4.8vw,58px);margin-bottom:20px}
+.final p{font-size:18.5px;color:#D5DEFA;max-width:620px;margin:0 auto}
+.final-ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:38px}
+.final-note{display:inline-flex;align-items:center;gap:10px;margin-top:30px;font-size:14.5px;font-weight:600;color:#D5DEFA}
+
+/* Footer */
+.footer{background:var(--night);color:#9FB0D9;padding:44px 0 30px;border-top:1px solid rgba(255,255,255,.08)}
+.foot-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
+.foot-links{display:flex;flex-wrap:wrap;gap:12px 28px;font-size:14.5px;font-weight:600}
+.foot-links a:hover{color:#fff}
+.copy{margin-top:26px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:13px}
+.copy a{text-decoration:underline;text-underline-offset:2px}
+
+/* Respaldo de imágenes: si una foto no carga, no se muestra el texto alternativo
+   y queda un fondo con cuadrícula en lugar de un recuadro roto */
+.hero-photo img,.sol-photo img,.proj-media img,.about-photo img,.final-bg img{position:relative;z-index:1;color:transparent;font-size:0}
+.hero-photo::before,.sol-photo::before,.proj-media::before,.about-photo::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);background-size:32px 32px}
+.hero-photo::after,.sol-tag,.proj-media .lbl{z-index:2}
+
+/* Botón flotante móvil */
+.fab{position:fixed;z-index:55;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));display:none;align-items:center;gap:8px;padding:14px 20px;border-radius:999px;background:var(--grad-cta);color:#fff;font-weight:800;font-size:15px;box-shadow:0 14px 30px -8px rgba(255,106,26,.75);opacity:0;transform:translateY(20px);transition:opacity .3s,transform .3s}
+.fab.show{opacity:1;transform:none}
+.fab .i{font-size:19px}
+
+/* Animación de entrada (el contenido se ve aunque falle el JS) */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.js .rv.on{opacity:1;transform:none}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1080px){
+  .hero-grid{grid-template-columns:minmax(0,1fr);gap:50px;padding-top:48px}
+  .hero-visual{max-width:640px;width:100%;margin:0 auto}
+  .hero-photo{aspect-ratio:16/12}
+  .pain-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .solution,.about-grid{grid-template-columns:minmax(0,1fr);gap:44px}
+  .svc-grid,.proj-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:820px){
+  .burger{display:block}
+  .menu{position:absolute;top:76px;left:0;right:0;flex-direction:column;align-items:stretch;gap:2px;padding:14px 20px 22px;background:rgba(7,15,46,.97);backdrop-filter:blur(16px);border-top:1px solid rgba(255,255,255,.08);box-shadow:0 30px 40px -20px rgba(0,0,0,.6);opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .25s,transform .25s var(--ease),visibility .25s}
+  .menu.open{opacity:1;visibility:visible;transform:none}
+  .menu a{padding:14px 6px;font-size:17px;border-bottom:1px solid rgba(255,255,255,.06)}
+  .menu .btn{margin-top:12px;min-height:52px;border-bottom:0}
+  .header{background:rgba(7,15,46,.86);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+  .cmp-grid{grid-template-columns:minmax(0,1fr)}
+  .fab{display:inline-flex}
+}
+@media (max-width:640px){
+  .nav{height:68px}
+  .menu{top:68px}
+  .hero{padding-top:68px}
+  .brand-name small{display:none}
+  .hero-grid{padding-top:36px;padding-bottom:70px}
+  .hero-ctas .btn{flex:1 1 100%}
+  .hero-checks{gap:10px 18px}
+  .hero-visual{padding:0}
+  .hero-photo{aspect-ratio:4/3.6;border-radius:24px}
+  .g-report{left:10px;bottom:-26px;width:200px;padding:13px}
+  .bars{height:52px;margin:10px 0 8px}
+  .g-auto{top:12px;right:10px;padding:10px 14px 10px 10px}
+  .g-auto .ic{width:36px;height:36px;font-size:18px}
+  .g-auto small{display:none}
+  .sec{padding:80px 0}
+  .head{margin-bottom:40px}
+  .pain-grid,.svc-grid,.proj-grid,.steps,.values{grid-template-columns:minmax(0,1fr)}
+  .solution{margin-top:64px}
+  .svc{padding:28px 24px}
+  .cmp{padding:28px 22px}
+  .final{padding:96px 0 110px}
+  .final-ctas .btn{flex:1 1 100%}
+  .btn{white-space:normal;text-align:center}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .rv{opacity:1;transform:none}
+}
+</style>
 </head>
 <body>
-  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-  <header class="site-header" id="top">
-    <nav class="nav container" aria-label="Navegación principal">
-      <a class="brand" href="#inicio" aria-label="Alfredo Yujra, inicio">
-        <span class="brand-mark">AY</span>
-        <span class="brand-text">Alfredo Yujra<small>Datos &amp; Automatización</small></span>
-      </a>
-      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="primary-navigation">
-        <span></span><span></span>
-      </button>
-      <div class="nav-links" id="primary-navigation">
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#proceso">Proceso</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#contacto" class="nav-cta">Contactar</a>
-      </div>
-    </nav>
-  </header>
+<!-- Íconos reutilizables -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="arrow-up" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></symbol>
+  <symbol id="check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="sync" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 13.7-5.6L20 9M20 4v5h-5M20 12a8 8 0 0 1-13.7 5.6L4 15M4 20v-5h5"/></symbol>
+  <symbol id="table" viewBox="0 0 24 24"><rect x="3.5" y="4" width="17" height="16" rx="2"/><path d="M3.5 9h17M9 9v11M15 9v11"/></symbol>
+  <symbol id="chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+  <symbol id="phone" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+  <symbol id="db" viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="7.5" ry="3"/><path d="M4.5 5.5v13c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-13M4.5 12c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3"/></symbol>
+  <symbol id="spark" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></symbol>
+  <symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></symbol>
+  <symbol id="alert" viewBox="0 0 24 24"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17.5v.01"/></symbol>
+  <symbol id="files" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></symbol>
+  <symbol id="target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+  <symbol id="shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-4.5"/></symbol>
+  <symbol id="mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></symbol>
+  <symbol id="chat" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.6-5.4A8.4 8.4 0 1 1 21 11.5z"/></symbol>
+  <symbol id="github" viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></symbol>
+</svg>
 
-  <main id="contenido">
-    <!-- ============ HERO ============ -->
-    <section class="hero" id="inicio">
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <p class="eyebrow"><span class="pulse"></span> Disponible para nuevos proyectos</p>
-          <h1>Convierto datos en <em>decisiones</em> y procesos manuales en <em>resultados.</em></h1>
-          <p class="hero-lead">Soy <strong>Alfredo José Yujra Chambi</strong>, analista de datos y automatización. Diseño reportes, tableros y herramientas que ahorran tiempo, reducen errores y dan claridad para decidir.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#proyectos">Ver proyectos
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
-            <a class="btn btn-ghost" href="#contacto">Agendar una conversación</a>
-          </div>
-          <ul class="hero-points" aria-label="Áreas principales">
-            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Excel avanzado &amp; VBA</li>
-            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Business Intelligence</li>
-            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Aplicaciones a medida</li>
-          </ul>
-        </div>
-
-        <div class="hero-media reveal">
-          <figure class="hero-photo">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1100&q=80"
-                 alt="Laptop mostrando gráficos de rendimiento y analítica de datos"
-                 width="1100" height="1300" fetchpriority="high">
-          </figure>
-          <div class="float-card card-kpi" aria-hidden="true">
-            <div class="kpi-head"><span>Reporte mensual</span><span class="tag-up">Automatizado</span></div>
-            <div class="kpi-bars"><i style="--h:38%"></i><i style="--h:55%"></i><i style="--h:47%"></i><i style="--h:70%"></i><i style="--h:62%"></i><i style="--h:88%"></i></div>
-            <div class="kpi-foot">Datos → Análisis → Acción</div>
-          </div>
-          <div class="float-card card-badge" aria-hidden="true">
-            <span class="badge-icon"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 13.7-5.6L20 9M20 4v5h-5M20 12a8 8 0 0 1-13.7 5.6L4 15M4 20v-5h5"/></svg></span>
-            <div><strong>Menos tareas manuales</strong><small>Procesos que se ejecutan solos</small></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tool-strip" aria-label="Herramientas con las que trabajo">
-        <div class="tool-track">
-          <span>Excel</span><span>VBA</span><span>Power Query</span><span>Power Pivot</span><span>Power BI</span><span>DAX</span><span>SQL</span><span>MySQL</span><span>SAP Business One</span><span>Python</span><span>Flutter</span><span>Laravel</span>
-          <span aria-hidden="true">Excel</span><span aria-hidden="true">VBA</span><span aria-hidden="true">Power Query</span><span aria-hidden="true">Power Pivot</span><span aria-hidden="true">Power BI</span><span aria-hidden="true">DAX</span><span aria-hidden="true">SQL</span><span aria-hidden="true">MySQL</span><span aria-hidden="true">SAP Business One</span><span aria-hidden="true">Python</span><span aria-hidden="true">Flutter</span><span aria-hidden="true">Laravel</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ SOBRE MÍ ============ -->
-    <section class="section about" id="sobre-mi">
-      <div class="container about-grid">
-        <figure class="about-photo reveal">
-          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=80"
-               alt="Escritorio de trabajo con laptop, documentos y análisis de información" loading="lazy" width="1000" height="1100">
-          <figcaption>Análisis · Reportes · Automatización</figcaption>
-        </figure>
-        <div class="about-copy reveal">
-          <p class="kicker">Sobre mí</p>
-          <h2>La tecnología tiene valor cuando <em>resuelve problemas reales.</em></h2>
-          <p>Me enfoco en analizar información, mejorar reportes y automatizar procesos repetitivos para que personas y organizaciones trabajen con mayor claridad y eficiencia.</p>
-          <p>Combino pensamiento analítico, herramientas de datos y desarrollo de soluciones prácticas. Mi objetivo es que los datos no solo se vean bien: deben ayudar a tomar mejores decisiones.</p>
-          <ul class="principles">
-            <li><span>01</span><div><strong>Claridad en los datos</strong><small>Información ordenada, confiable y fácil de leer.</small></div></li>
-            <li><span>02</span><div><strong>Eficiencia operativa</strong><small>Menos pasos manuales, menos errores.</small></div></li>
-            <li><span>03</span><div><strong>Mejora continua</strong><small>Soluciones que crecen con tu operación.</small></div></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ SERVICIOS / HABILIDADES ============ -->
-    <section class="section services" id="servicios">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <p class="kicker">Servicios y habilidades</p>
-            <h2>Herramientas para convertir ideas en <em>soluciones.</em></h2>
-          </div>
-          <p>Un conjunto de capacidades orientadas al análisis, la automatización y la creación de productos digitales.</p>
-        </div>
-
-        <div class="service-grid">
-          <article class="service-card reveal">
-            <span class="svc-icon"><svg viewBox="0 0 24 24"><rect x="3.5" y="4" width="17" height="16" rx="2"/><path d="M3.5 9h17M9 9v11M15 9v11"/></svg></span>
-            <h3>Excel avanzado &amp; VBA</h3>
-            <p>Reportes, macros, formularios, consolidación de datos y optimización de tareas repetitivas.</p>
-            <div class="tags"><span>Excel</span><span>VBA</span><span>Power Query</span></div>
-          </article>
-          <article class="service-card reveal">
-            <span class="svc-icon"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
-            <h3>Business Intelligence</h3>
-            <p>Indicadores, análisis de desempeño, modelos de datos y tableros para apoyar decisiones.</p>
-            <div class="tags"><span>Power BI</span><span>Power Pivot</span><span>DAX</span></div>
-          </article>
-          <article class="service-card reveal">
-            <span class="svc-icon"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 13.7-5.6L20 9M20 4v5h-5M20 12a8 8 0 0 1-13.7 5.6L4 15M4 20v-5h5"/></svg></span>
-            <h3>Automatización de procesos</h3>
-            <p>Flujos y herramientas que reducen trabajo manual, errores y tiempos de operación.</p>
-            <div class="tags"><span>Python</span><span>Apps Script</span><span>Procesos</span></div>
-          </article>
-          <article class="service-card reveal">
-            <span class="svc-icon"><svg viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span>
-            <h3>Desarrollo de aplicaciones</h3>
-            <p>Prototipos y aplicaciones que resuelven necesidades concretas de usuarios y negocios.</p>
-            <div class="tags"><span>Flutter</span><span>HTML/CSS</span><span>JavaScript</span></div>
-          </article>
-          <article class="service-card reveal">
-            <span class="svc-icon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="7.5" ry="3"/><path d="M4.5 5.5v13c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-13M4.5 12c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3"/></svg></span>
-            <h3>Datos &amp; sistemas</h3>
-            <p>Organización de información, consultas y trabajo con fuentes de datos empresariales.</p>
-            <div class="tags"><span>SQL</span><span>MySQL</span><span>SAP Business One</span></div>
-          </article>
-          <article class="service-card reveal">
-            <span class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></svg></span>
-            <h3>IA aplicada</h3>
-            <p>Herramientas de inteligencia artificial para acelerar análisis y tareas digitales.</p>
-            <div class="tags"><span>IA generativa</span><span>Asistentes</span><span>Productividad</span></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ PROCESO ============ -->
-    <section class="section process" id="proceso">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <p class="kicker">Cómo trabajo</p>
-            <h2>Un proceso claro, de principio <em>a fin.</em></h2>
-          </div>
-          <p>Cada solución parte de entender tu operación y termina con algo que tu equipo puede usar desde el primer día.</p>
-        </div>
-        <ol class="steps">
-          <li class="step reveal"><span class="step-n">01</span><h3>Diagnóstico</h3><p>Reviso tus datos, reportes y tareas repetitivas para identificar dónde se pierde tiempo.</p></li>
-          <li class="step reveal"><span class="step-n">02</span><h3>Diseño</h3><p>Propongo la estructura del reporte, tablero o herramienta y validamos juntos el alcance.</p></li>
-          <li class="step reveal"><span class="step-n">03</span><h3>Desarrollo</h3><p>Construyo la solución con pruebas sobre tus datos reales y ajustes por etapas.</p></li>
-          <li class="step reveal"><span class="step-n">04</span><h3>Entrega y soporte</h3><p>Capacito a tu equipo, documento el uso y acompaño las primeras mejoras.</p></li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- ============ PROYECTOS ============ -->
-    <!-- Reemplaza los textos y enlaces "#contacto" por tus casos reales y repositorios cuando estén publicados. -->
-    <section class="section projects" id="proyectos">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <p class="kicker">Proyectos</p>
-            <h2>Soluciones con un <em>propósito.</em></h2>
-          </div>
-          <p>Una muestra del tipo de trabajo que desarrollo: análisis, automatización y aplicaciones prácticas.</p>
-        </div>
-
-        <div class="project-grid">
-          <article class="project-card featured reveal">
-            <figure class="project-media">
-              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1300&q=80"
-                   alt="Laptop con tablero de indicadores y gráficos de desempeño" loading="lazy" width="1300" height="860">
-              <span class="media-tag">Análisis · Reporting</span>
-            </figure>
-            <div class="project-body">
-              <h3>Dashboard de indicadores</h3>
-              <p>Visualización de métricas clave para dar seguimiento a resultados e identificar diferencias relevantes a tiempo.</p>
-              <div class="tags"><span>Excel</span><span>Power Pivot</span><span>HTML</span></div>
-              <a class="link-arrow" href="#contacto">Consultar proyecto <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-            </div>
-          </article>
-
-          <article class="project-card reveal">
-            <figure class="project-media">
-              <img src="https://images.unsplash.com/photo-1783115259399-3a5a3e0e4592?auto=format&fit=crop&w=900&q=80"
-                   alt="Manos escribiendo en una laptop con una hoja de cálculo de datos" loading="lazy" width="900" height="640">
-              <span class="media-tag">Productividad · VBA</span>
-            </figure>
-            <div class="project-body">
-              <h3>Automatización de reportes</h3>
-              <p>Procesos automatizados de limpieza, cálculo y consolidación de información que eliminan horas de trabajo manual.</p>
-              <div class="tags"><span>VBA</span><span>Excel</span><span>Power Query</span></div>
-              <a class="link-arrow" href="#contacto">Consultar proyecto <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-            </div>
-          </article>
-
-          <article class="project-card reveal">
-            <figure class="project-media">
-              <img src="https://images.unsplash.com/photo-1633250391894-397930e3f5f2?auto=format&fit=crop&w=900&q=80"
-                   alt="Persona sosteniendo un teléfono móvil frente a una laptop" loading="lazy" width="900" height="640">
-              <span class="media-tag">Desarrollo · App</span>
-            </figure>
-            <div class="project-body">
-              <h3>Aplicaciones prácticas</h3>
-              <p>Herramientas digitales enfocadas en resolver necesidades cotidianas con una experiencia de uso simple.</p>
-              <div class="tags"><span>Flutter</span><span>UI/UX</span><span>Android</span></div>
-              <a class="link-arrow" href="#contacto">Consultar proyecto <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ CONTACTO ============ -->
-    <section class="contact" id="contacto">
-      <div class="contact-bg" aria-hidden="true">
-        <img src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?auto=format&fit=crop&w=1800&q=75" alt="" loading="lazy">
-      </div>
-      <div class="container contact-inner reveal">
-        <p class="kicker kicker-light">Contacto</p>
-        <h2>¿Tienes un proceso que mejorar o datos que <em>entender?</em></h2>
-        <p>Conversemos sobre cómo el análisis de datos y la automatización pueden aportar valor a tu proyecto.</p>
-        <div class="contact-actions">
-          <!-- Reemplaza tu.correo@ejemplo.com por tu correo real. -->
-          <a class="btn btn-white" href="mailto:tu.correo@ejemplo.com?subject=Consulta%20profesional">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>
-            Escríbeme por correo
-          </a>
-          <!-- Reemplaza https://github.com/ por la URL de tu perfil. -->
-          <a class="btn btn-outline-light" href="https://github.com/" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-            Ver mi GitHub
-          </a>
-        </div>
-        <p class="contact-note"><span class="pulse"></span> Disponible para conectar y colaborar</p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <a class="brand" href="#inicio"><span class="brand-mark">AY</span><span class="brand-text">Alfredo Yujra<small>Datos &amp; Automatización</small></span></a>
-      <nav class="footer-links" aria-label="Enlaces del pie">
-        <a href="#sobre-mi">Sobre mí</a><a href="#servicios">Servicios</a><a href="#proyectos">Proyectos</a><a href="#contacto">Contacto</a>
-      </nav>
-      <p class="copyright">© <span id="year"></span> Alfredo José Yujra Chambi · Bolivia</p>
+<header class="header" id="header">
+  <nav class="wrap nav" aria-label="Navegación principal">
+    <a class="brand" href="#inicio" aria-label="Alfredo Yujra, inicio">
+      <span class="brand-mark">AY</span>
+      <span class="brand-name">Alfredo Yujra<small>Datos &amp; Automatización</small></span>
+    </a>
+    <button class="burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+    <div class="menu" id="menu">
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Cómo trabajo</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#contacto" class="btn btn-cta">Cotizar mi proyecto</a>
     </div>
-    <p class="container credits">Fotografías: <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
-  </footer>
+  </nav>
+</header>
 
-  <script src="script.js"></script>
+<main>
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="inicio">
+    <div class="wrap hero-grid">
+      <div class="rv">
+        <p class="pill"><span class="dot"></span> Disponible para nuevos proyectos</p>
+        <h1>Deja de perder horas en Excel. <span class="grad-text">Automatiza y decide con datos claros.</span></h1>
+        <p class="hero-lead">Soy <strong>Alfredo José Yujra Chambi</strong>, analista de datos y automatización. Convierto tus reportes manuales en procesos automáticos y tus datos en tableros que muestran qué hacer a continuación.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-cta" href="#contacto">Quiero automatizar mis reportes <svg class="i"><use href="#arrow"/></svg></a>
+          <a class="btn btn-glass" href="#proyectos">Ver proyectos</a>
+        </div>
+        <ul class="hero-checks">
+          <li><svg class="i"><use href="#check"/></svg>Excel avanzado y VBA</li>
+          <li><svg class="i"><use href="#check"/></svg>Power BI y tableros</li>
+          <li><svg class="i"><use href="#check"/></svg>Apps a medida</li>
+        </ul>
+      </div>
+
+      <div class="hero-visual rv">
+        <figure class="hero-photo">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1100&q=80" alt="Laptop con un tablero de analítica y gráficos de rendimiento" width="1100" height="1240" fetchpriority="high">
+        </figure>
+        <div class="glass g-report" aria-hidden="true">
+          <div class="top"><span>Reporte mensual</span><span class="badge-ok"><svg class="i"><use href="#check"/></svg>Automático</span></div>
+          <div class="bars"><i style="height:36%"></i><i style="height:52%"></i><i style="height:44%"></i><i style="height:68%"></i><i style="height:60%"></i><i style="height:90%"></i></div>
+          <div class="foot">Se actualiza solo, sin copiar y pegar</div>
+        </div>
+        <div class="glass g-auto" aria-hidden="true">
+          <span class="ic"><svg class="i"><use href="#sync"/></svg></span>
+          <div><strong>Procesos en piloto automático</strong><small>Menos errores, más tiempo libre</small></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tools" aria-label="Herramientas con las que trabajo">
+      <div class="tools-track">
+        <span>Excel</span><span>VBA</span><span>Power Query</span><span>Power Pivot</span><span>Power BI</span><span>DAX</span><span>SQL</span><span>MySQL</span><span>SAP Business One</span><span>Python</span><span>Flutter</span><span>Laravel</span>
+        <span aria-hidden="true">Excel</span><span aria-hidden="true">VBA</span><span aria-hidden="true">Power Query</span><span aria-hidden="true">Power Pivot</span><span aria-hidden="true">Power BI</span><span aria-hidden="true">DAX</span><span aria-hidden="true">SQL</span><span aria-hidden="true">MySQL</span><span aria-hidden="true">SAP Business One</span><span aria-hidden="true">Python</span><span aria-hidden="true">Flutter</span><span aria-hidden="true">Laravel</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DOLOR + SOLUCIÓN ============ -->
+  <section class="sec pain" id="problema">
+    <div class="wrap">
+      <div class="head center rv">
+        <p class="eyebrow">¿Te suena familiar?</p>
+        <h2>Tu equipo trabaja duro, pero <span class="grad-text">los datos no ayudan.</span></h2>
+        <p class="sec-lead">Estas situaciones se repiten en muchas empresas y cuestan horas cada semana.</p>
+      </div>
+      <div class="pain-grid">
+        <article class="pain-card rv"><span class="ic"><svg class="i"><use href="#copy"/></svg></span><h3>Copiar y pegar sin fin</h3><p>Los mismos datos se pasan a mano de un archivo a otro, semana tras semana.</p></article>
+        <article class="pain-card rv"><span class="ic"><svg class="i"><use href="#clock"/></svg></span><h3>Reportes que tardan días</h3><p>Cuando el informe por fin está listo, la decisión ya debía haberse tomado.</p></article>
+        <article class="pain-card rv"><span class="ic"><svg class="i"><use href="#alert"/></svg></span><h3>Errores que cuestan</h3><p>Una fórmula rota o una fila olvidada cambia el resultado y nadie lo nota a tiempo.</p></article>
+        <article class="pain-card rv"><span class="ic"><svg class="i"><use href="#files"/></svg></span><h3>Información dispersa</h3><p>Ventas, inventario y cobranzas viven en archivos distintos que no se hablan.</p></article>
+      </div>
+
+      <div class="solution">
+        <figure class="sol-photo rv">
+          <img src="https://images.unsplash.com/photo-1784334312040-5b3d4cf78b88?auto=format&fit=crop&w=1100&q=80" alt="Mano trabajando en una laptop con una hoja de cálculo de datos sobre el escritorio" loading="lazy" width="1100" height="880">
+          <span class="sol-tag"><svg class="i"><use href="#check"/></svg>Un clic y el reporte está listo</span>
+        </figure>
+        <div class="rv">
+          <p class="eyebrow">La solución</p>
+          <h2>Herramientas que trabajan <span class="grad-text">por ti.</span></h2>
+          <p class="sec-lead">Diseño soluciones a la medida de tu operación, sobre las herramientas que tu equipo ya usa.</p>
+          <ul class="benefits">
+            <li><span class="ic"><svg class="i"><use href="#sync"/></svg></span><div><strong>Reportes automáticos</strong><span>Macros y consultas que limpian, calculan y consolidan la información por ti.</span></div></li>
+            <li><span class="ic"><svg class="i"><use href="#chart"/></svg></span><div><strong>Tableros claros</strong><span>Indicadores visuales para ver de un vistazo qué está funcionando y qué no.</span></div></li>
+            <li><span class="ic"><svg class="i"><use href="#shield"/></svg></span><div><strong>Datos confiables</strong><span>Validaciones que evitan errores antes de que lleguen a una decisión.</span></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICIOS ============ -->
+  <section class="sec" id="servicios">
+    <div class="wrap">
+      <div class="head center rv">
+        <p class="eyebrow">Servicios</p>
+        <h2>Todo lo que necesitas para <span class="grad-text">trabajar con datos.</span></h2>
+        <p class="sec-lead">Desde una macro puntual hasta un sistema completo de reportes y aplicaciones.</p>
+      </div>
+      <div class="svc-grid">
+        <article class="svc rv"><span class="ic c1"><svg class="i"><use href="#table"/></svg></span><h3>Excel avanzado y VBA</h3><p>Macros, formularios y reportes automáticos que eliminan tareas repetitivas.</p><div class="tags"><span>Excel</span><span>VBA</span><span>Power Query</span></div></article>
+        <article class="svc rv"><span class="ic c2"><svg class="i"><use href="#chart"/></svg></span><h3>Business Intelligence</h3><p>Modelos de datos e indicadores en tableros que apoyan cada decisión.</p><div class="tags"><span>Power BI</span><span>Power Pivot</span><span>DAX</span></div></article>
+        <article class="svc rv"><span class="ic c3"><svg class="i"><use href="#sync"/></svg></span><h3>Automatización de procesos</h3><p>Flujos que reducen el trabajo manual, los errores y los tiempos de operación.</p><div class="tags"><span>Python</span><span>Apps Script</span><span>Procesos</span></div></article>
+        <article class="svc rv"><span class="ic c4"><svg class="i"><use href="#phone"/></svg></span><h3>Aplicaciones a medida</h3><p>Apps móviles y web que resuelven necesidades concretas de tu negocio.</p><div class="tags"><span>Flutter</span><span>Laravel</span><span>JavaScript</span></div></article>
+        <article class="svc rv"><span class="ic c5"><svg class="i"><use href="#db"/></svg></span><h3>Datos y sistemas</h3><p>Consultas, orden y conexión de tus fuentes de datos empresariales.</p><div class="tags"><span>SQL</span><span>MySQL</span><span>SAP Business One</span></div></article>
+        <article class="svc rv"><span class="ic c6"><svg class="i"><use href="#spark"/></svg></span><h3>IA aplicada</h3><p>Inteligencia artificial para acelerar análisis, documentos y tareas digitales.</p><div class="tags"><span>IA generativa</span><span>Asistentes</span><span>Productividad</span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ANTES / DESPUÉS ============ -->
+  <section class="sec compare">
+    <div class="wrap">
+      <div class="head center rv">
+        <p class="eyebrow">El cambio</p>
+        <h2>Así se ve tu día <span class="grad-text">antes y después.</span></h2>
+        <p class="sec-lead">La diferencia entre perseguir datos y usarlos para avanzar.</p>
+      </div>
+      <div class="cmp-grid">
+        <div class="cmp before rv">
+          <h3><span class="ic"><svg class="i"><use href="#x"/></svg></span>Antes</h3>
+          <ul>
+            <li><svg class="i"><use href="#x"/></svg>Horas armando el mismo reporte cada semana</li>
+            <li><svg class="i"><use href="#x"/></svg>Archivos con versiones distintas y cifras que no cuadran</li>
+            <li><svg class="i"><use href="#x"/></svg>Decisiones basadas en intuición o datos atrasados</li>
+            <li><svg class="i"><use href="#x"/></svg>Errores que aparecen cuando ya es tarde</li>
+          </ul>
+        </div>
+        <div class="cmp after rv">
+          <h3><span class="ic"><svg class="i"><use href="#check"/></svg></span>Después</h3>
+          <ul>
+            <li><svg class="i"><use href="#check"/></svg>Reportes que se generan con un clic</li>
+            <li><svg class="i"><use href="#check"/></svg>Una sola fuente de datos ordenada y confiable</li>
+            <li><svg class="i"><use href="#check"/></svg>Tableros actualizados para decidir con claridad</li>
+            <li><svg class="i"><use href="#check"/></svg>Más tiempo para analizar, vender y crecer</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESO ============ -->
+  <section class="sec" id="proceso">
+    <div class="wrap">
+      <div class="head center rv">
+        <p class="eyebrow">Cómo trabajo</p>
+        <h2>Cuatro pasos, <span class="grad-text">cero complicaciones.</span></h2>
+        <p class="sec-lead">Un proceso claro para que sepas en todo momento qué se está haciendo y por qué.</p>
+      </div>
+      <ol class="steps">
+        <li class="step rv"><span class="step-n">1</span><h3>Diagnóstico</h3><p>Reviso tus archivos, reportes y tareas repetitivas para encontrar dónde se pierde tiempo.</p></li>
+        <li class="step rv"><span class="step-n">2</span><h3>Propuesta</h3><p>Te presento la solución, el alcance y los entregables antes de empezar.</p></li>
+        <li class="step rv"><span class="step-n">3</span><h3>Desarrollo</h3><p>Construyo y pruebo con tus datos reales, con avances que puedes revisar.</p></li>
+        <li class="step rv"><span class="step-n">4</span><h3>Entrega</h3><p>Te explico cómo usarla y dejo instrucciones para que tu equipo la aproveche.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ PROYECTOS ============ -->
+  <!-- Cambia los enlaces "#contacto" por enlaces a tus demos o repositorios cuando estén publicados. -->
+  <section class="sec projects" id="proyectos">
+    <div class="wrap">
+      <div class="head center rv">
+        <p class="eyebrow">Proyectos</p>
+        <h2>Soluciones que ya <span class="grad-text">están funcionando.</span></h2>
+        <p class="sec-lead">Una muestra del tipo de trabajo que desarrollo para ordenar, automatizar y visualizar información.</p>
+      </div>
+      <div class="proj-grid">
+        <article class="proj rv">
+          <figure class="proj-media"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80" alt="Laptop con tablero de indicadores y gráficos" loading="lazy" width="900" height="620"><span class="lbl">Business Intelligence</span></figure>
+          <div class="proj-body"><h3>Dashboard de indicadores</h3><p>Tablero en HTML conectado a Excel con Power Pivot para controlar diferencias de inventario y métricas clave.</p><div class="tags"><span>Excel</span><span>Power Pivot</span><span>HTML</span></div><a class="more" href="#contacto">Consultar proyecto <svg class="i"><use href="#arrow-up"/></svg></a></div>
+        </article>
+        <article class="proj rv">
+          <figure class="proj-media"><img src="https://images.unsplash.com/photo-1783115259399-3a5a3e0e4592?auto=format&fit=crop&w=900&q=80" alt="Manos escribiendo en una laptop con una hoja de cálculo" loading="lazy" width="900" height="620"><span class="lbl">Excel · VBA</span></figure>
+          <div class="proj-body"><h3>Sistema de control de cuotas</h3><p>Control de cobranzas en Excel con VBA: registro de pagos, saldos y reportes automáticos por cliente.</p><div class="tags"><span>VBA</span><span>Excel</span><span>Formularios</span></div><a class="more" href="#contacto">Consultar proyecto <svg class="i"><use href="#arrow-up"/></svg></a></div>
+        </article>
+        <article class="proj rv">
+          <figure class="proj-media"><img src="https://images.unsplash.com/photo-1618927376995-a721da8c11db?auto=format&fit=crop&w=900&q=80" alt="Persona sosteniendo un smartphone Android" loading="lazy" width="900" height="620"><span class="lbl">Apps Android</span></figure>
+          <div class="proj-body"><h3>Aplicaciones móviles</h3><p>Apps en Flutter como control de gastos personales y apps educativas, pensadas para un uso simple y rápido.</p><div class="tags"><span>Flutter</span><span>Android</span><span>UI/UX</span></div><a class="more" href="#contacto">Consultar proyecto <svg class="i"><use href="#arrow-up"/></svg></a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SOBRE MÍ ============ -->
+  <section class="sec" id="sobre-mi">
+    <div class="wrap about-grid">
+      <figure class="about-photo rv">
+        <img src="https://images.unsplash.com/photo-1781246435700-afec19012b45?auto=format&fit=crop&w=1000&q=80" alt="Laptop con gráficos sobre un escritorio junto a una ventana iluminada" loading="lazy" width="1000" height="1070">
+      </figure>
+      <div class="about-copy rv">
+        <p class="eyebrow">Sobre mí</p>
+        <h2>La tecnología vale cuando <span class="grad-text">resuelve problemas reales.</span></h2>
+        <p>Me enfoco en analizar información, mejorar reportes y automatizar procesos repetitivos para que personas y organizaciones trabajen con más claridad y eficiencia.</p>
+        <p>Combino pensamiento analítico, herramientas de datos y desarrollo de soluciones prácticas. Mi objetivo es que los datos no solo se vean bien: deben ayudarte a tomar mejores decisiones.</p>
+        <div class="values">
+          <div><strong>Claridad</strong><span>Datos ordenados y fáciles de leer</span></div>
+          <div><strong>Eficiencia</strong><span>Menos pasos manuales</span></div>
+          <div><strong>Mejora continua</strong><span>Soluciones que crecen contigo</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PREGUNTAS FRECUENTES ============ -->
+  <!-- Revisa estas respuestas y ajústalas a tu forma de trabajar. -->
+  <section class="sec faq">
+    <div class="wrap">
+      <div class="head center rv">
+        <p class="eyebrow">Preguntas frecuentes</p>
+        <h2>Resolvamos tus <span class="grad-text">dudas.</span></h2>
+      </div>
+      <div class="faq-list">
+        <details class="rv"><summary>¿Necesito saber programar para usar las soluciones?<svg class="i"><use href="#plus"/></svg></summary><p>No. Las herramientas se entregan listas para usar, con botones y pasos simples. Te explico cómo funcionan para que las uses con confianza.</p></details>
+        <details class="rv"><summary>¿Puedes trabajar con mis archivos de Excel actuales?<svg class="i"><use href="#plus"/></svg></summary><p>Sí. Parto de los archivos y procesos que ya tienes y los mejoro, en lugar de obligarte a empezar de cero.</p></details>
+        <details class="rv"><summary>¿Trabajas de forma remota?<svg class="i"><use href="#plus"/></svg></summary><p>Sí. Podemos coordinar por correo o videollamada y compartir avances en línea durante todo el proyecto.</p></details>
+        <details class="rv"><summary>¿Cómo empezamos?<svg class="i"><use href="#plus"/></svg></summary><p>Escríbeme contándome qué proceso o reporte te quita más tiempo. Lo revisamos juntos y te propongo una solución.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL ============ -->
+  <section class="final" id="contacto">
+    <div class="final-bg" aria-hidden="true"><img src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?auto=format&fit=crop&w=1800&q=75" alt="" loading="lazy"></div>
+    <div class="wrap rv">
+      <h2>¿Listo para recuperar tus horas y <span class="grad-text">decidir con datos?</span></h2>
+      <p>Cuéntame qué reporte o proceso te quita más tiempo. Te respondo con una propuesta clara para resolverlo.</p>
+      <div class="final-ctas">
+        <!-- Reemplaza tu.correo@ejemplo.com por tu correo real. -->
+        <a class="btn btn-cta" href="mailto:tu.correo@ejemplo.com?subject=Quiero%20automatizar%20mis%20reportes"><svg class="i"><use href="#mail"/></svg> Escríbeme por correo</a>
+        <!-- Reemplaza https://github.com/ por la URL de tu perfil. -->
+        <a class="btn btn-glass" href="https://github.com/" target="_blank" rel="noopener noreferrer"><svg class="i"><use href="#github"/></svg> Ver mi GitHub</a>
+      </div>
+      <p class="final-note"><span class="dot"></span> Disponible para nuevos proyectos</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-row">
+      <a class="brand" href="#inicio"><span class="brand-mark">AY</span><span class="brand-name">Alfredo Yujra<small>Datos &amp; Automatización</small></span></a>
+      <nav class="foot-links" aria-label="Enlaces del pie"><a href="#servicios">Servicios</a><a href="#proceso">Cómo trabajo</a><a href="#proyectos">Proyectos</a><a href="#sobre-mi">Sobre mí</a><a href="#contacto">Contacto</a></nav>
+    </div>
+    <div class="copy"><span>© <span id="year">2026</span> Alfredo José Yujra Chambi · Bolivia</span><span>Fotografías: <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a></span></div>
+  </div>
+</footer>
+
+<a class="fab" id="fab" href="#contacto"><svg class="i"><use href="#chat"/></svg> Cotizar</a>
+
+<script>
+(function(){
+  'use strict';
+  var root=document.documentElement;
+  root.classList.add('js');
+
+  // Menú móvil
+  var burger=document.getElementById('burger'), menu=document.getElementById('menu');
+  function setMenu(open){menu.classList.toggle('open',open);burger.setAttribute('aria-expanded',String(open));burger.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');}
+  burger.addEventListener('click',function(){setMenu(!menu.classList.contains('open'));});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false);});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){setMenu(false);}});
+
+  // Encabezado sólido y botón flotante al hacer scroll
+  var header=document.getElementById('header'), fab=document.getElementById('fab');
+  function onScroll(){var y=window.scrollY;header.classList.toggle('solid',y>20);fab.classList.toggle('show',y>600);}
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+  // Animación de entrada
+  var items=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var ob=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');ob.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+    items.forEach(function(el,i){el.style.transitionDelay=((i%4)*80)+'ms';ob.observe(el);});
+  }else{items.forEach(function(el){el.classList.add('on');});}
+
+  // Si una foto no carga, queda el fondo degradado
+  document.querySelectorAll('img').forEach(function(img){img.addEventListener('error',function(){img.style.opacity='0';});});
+
+  document.getElementById('year').textContent=new Date().getFullYear();
+})();
+</script>
 </body>
 </html>
